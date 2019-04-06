@@ -1,3 +1,5 @@
+let typologyCase;
+
 //finds typology given political beliefs
 function findTypology(polArr,party){
   //democrat typologies
@@ -364,27 +366,73 @@ function findTypology(polArr,party){
       coreConservative *= 97;
   }
 
-  if (newEraEnterpriser>=marketSkepticRepublican&&newEraEnterpriser>=countryFirstConservative&&newEraEnterpriser>=coreConservative&&newEraEnterpriser>=solidLiberal&&newEraEnterpriser>=opportunityDemocrat&&newEraEnterpriser>=disaffectedDemocrat&&newEraEnterpriser>=devoutAndDiverse)
+  if (newEraEnterpriser>=marketSkepticRepublican&&newEraEnterpriser>=countryFirstConservative&&newEraEnterpriser>=coreConservative&&newEraEnterpriser>=solidLiberal&&newEraEnterpriser>=opportunityDemocrat&&newEraEnterpriser>=disaffectedDemocrat&&newEraEnterpriser>=devoutAndDiverse){
+      typologyCase = 1;
       return "New Era Enterpriser";
-  if (marketSkepticRepublican>=newEraEnterpriser&&marketSkepticRepublican>=countryFirstConservative&&marketSkepticRepublican>=coreConservative&&marketSkepticRepublican>=solidLiberal&&marketSkepticRepublican>=opportunityDemocrat&&marketSkepticRepublican>=disaffectedDemocrat&&marketSkepticRepublican>=devoutAndDiverse)
+    }
+  if (marketSkepticRepublican>=newEraEnterpriser&&marketSkepticRepublican>=countryFirstConservative&&marketSkepticRepublican>=coreConservative&&marketSkepticRepublican>=solidLiberal&&marketSkepticRepublican>=opportunityDemocrat&&marketSkepticRepublican>=disaffectedDemocrat&&marketSkepticRepublican>=devoutAndDiverse){
+      typologyCase = 2;
       return "Market Skeptic Republican";
+    }
   if (countryFirstConservative>=newEraEnterpriser&&countryFirstConservative>=marketSkepticRepublican&&countryFirstConservative>=coreConservative&&countryFirstConservative>=solidLiberal&&countryFirstConservative>=opportunityDemocrat&&countryFirstConservative>=disaffectedDemocrat&&countryFirstConservative>=devoutAndDiverse) {
+      typologyCase = 3;
       return "Country First Conservative";
-  }
-  if (coreConservative>=newEraEnterpriser&&coreConservative>=marketSkepticRepublican&&coreConservative>=countryFirstConservative&&coreConservative>=solidLiberal&&coreConservative>=opportunityDemocrat&&coreConservative>=disaffectedDemocrat&&coreConservative>=devoutAndDiverse)
+    }
+  if (coreConservative>=newEraEnterpriser&&coreConservative>=marketSkepticRepublican&&coreConservative>=countryFirstConservative&&coreConservative>=solidLiberal&&coreConservative>=opportunityDemocrat&&coreConservative>=disaffectedDemocrat&&coreConservative>=devoutAndDiverse){
+      typologyCase = 4;
       return "Core Conservative";
-  if (solidLiberal>=opportunityDemocrat&&solidLiberal>=disaffectedDemocrat&&solidLiberal>=devoutAndDiverse&&solidLiberal>=newEraEnterpriser&&solidLiberal>=marketSkepticRepublican&&solidLiberal>=countryFirstConservative&&solidLiberal>=coreConservative)
+    }
+  if (solidLiberal>=opportunityDemocrat&&solidLiberal>=disaffectedDemocrat&&solidLiberal>=devoutAndDiverse&&solidLiberal>=newEraEnterpriser&&solidLiberal>=marketSkepticRepublican&&solidLiberal>=countryFirstConservative&&solidLiberal>=coreConservative){
+      typologyCase = 5;
       return "Solid Liberal";
-  if (opportunityDemocrat>=solidLiberal&&opportunityDemocrat>=disaffectedDemocrat&&opportunityDemocrat>=devoutAndDiverse&&opportunityDemocrat>=newEraEnterpriser&&opportunityDemocrat>=marketSkepticRepublican&&opportunityDemocrat>=countryFirstConservative&&opportunityDemocrat>=coreConservative)
+    }
+  if (opportunityDemocrat>=solidLiberal&&opportunityDemocrat>=disaffectedDemocrat&&opportunityDemocrat>=devoutAndDiverse&&opportunityDemocrat>=newEraEnterpriser&&opportunityDemocrat>=marketSkepticRepublican&&opportunityDemocrat>=countryFirstConservative&&opportunityDemocrat>=coreConservative){
+      typologyCase = 6;
       return "Opportunity Democrat";
-  if (disaffectedDemocrat>=solidLiberal&&disaffectedDemocrat>=opportunityDemocrat&&disaffectedDemocrat>=devoutAndDiverse&&disaffectedDemocrat>=newEraEnterpriser&&disaffectedDemocrat>=marketSkepticRepublican&&disaffectedDemocrat>=countryFirstConservative&&disaffectedDemocrat>=coreConservative)
+    }
+  if (disaffectedDemocrat>=solidLiberal&&disaffectedDemocrat>=opportunityDemocrat&&disaffectedDemocrat>=devoutAndDiverse&&disaffectedDemocrat>=newEraEnterpriser&&disaffectedDemocrat>=marketSkepticRepublican&&disaffectedDemocrat>=countryFirstConservative&&disaffectedDemocrat>=coreConservative){
+      typologyCase = 7;
       return "Disaffected Democrat";
-  if (devoutAndDiverse>=solidLiberal&&devoutAndDiverse>=opportunityDemocrat&&devoutAndDiverse>=disaffectedDemocrat&&devoutAndDiverse>=newEraEnterpriser&&devoutAndDiverse>=marketSkepticRepublican&&devoutAndDiverse>=countryFirstConservative&&devoutAndDiverse>=coreConservative)
+    }
+  if (devoutAndDiverse>=solidLiberal&&devoutAndDiverse>=opportunityDemocrat&&devoutAndDiverse>=disaffectedDemocrat&&devoutAndDiverse>=newEraEnterpriser&&devoutAndDiverse>=marketSkepticRepublican&&devoutAndDiverse>=countryFirstConservative&&devoutAndDiverse>=coreConservative){
+      typologyCase = 8;
       return "Devout and Diverse";
+    }
   return "N/A";
 // Apple 0
 // Banana 1
 
+}
+
+function typologyDescriptor(gradient){
+  var gradient = typologyCase;
+
+  switch (gradient){
+    case 1:
+    return "This relatively young, economically conservative, Republican-leaning group tends to be relatively moderate on immigration and views about America’s engagement with the rest of the world. Most say U.S. involvement in the global economy is a good thing and that immigrants strengthen the nation. As is the case with other GOP-leaning groups, a majority of New Era Enterprisers reject the idea that racial discrimination is the main reason many black people are unable to get ahead. Nearly two-thirds favor societal acceptance of homosexuality. New Era Enterprisers are less critical about government than other Republican-leaning groups.";
+    break;
+    case 2:
+    return "Critical of many major institutions and government, Market Skeptic Republicans mostly identify with, or lean toward, the GOP. They stand out from other Republican-oriented groups in their negative views of the economic system: An overwhelming majority say it “unfairly favors powerful interests.” Most also say businesses make too much profit, and they are the most likely Republican-leaning group to want to raise taxes on corporations (55%). They are similar to other GOP-leaning groups in their skepticism about the social safety net."
+    break;
+    case 3:
+    return "This largely Republican group is highly critical of immigration and U.S. global involvement. Country First Conservatives are most likely to describe immigrants as a burden on the country and to say that too much openness threatens American identity. More than any other group, they say that America should act in its own interest even when its foreign allies disagree. Like Core Conservatives, they prefer a smaller government with fewer services, and most think that government is wasteful and inefficient. Country First Conservatives are conservative on social issues and are the only typology group in which a majority says homosexuality should be discouraged by society."
+    break;
+    case 4:
+    return "This overwhelmingly Republican group holds conservative attitudes across a wide range of issues, especially in their support for smaller government. Core Conservatives are deeply skeptical of the social safety net and favor lower tax rates on corporations and high-income individuals. While they are divided on whether immigrants do more to strengthen or burden the country, Core Conservatives offer far more positive views of immigrants than do Country First Conservatives. Core Conservatives are relatively upbeat about national conditions and a majority says that the United States “stands above” all other nations in the world."
+    break;
+    case 5:
+    return "Highly educated and politically engaged, Solid Liberals hold consistently liberal values. They back a robust role for government and are strong advocates of the social safety net. Large majorities view the current economic system as unfair and see economic inequality as a major problem. They take broadly positive views of immigrants, and fully 99% think being open to people from around the world is an essential part of the nation’s identity. Most say more needs to be done to address both racial discrimination and obstacles to women’s achievement. They support same-sex marriage and believe homosexuality should be accepted by society. Solid Liberals are the most Democratic of all typology groups: nearly two-thirds (64%) identify as Democrats, another 35% lean toward the Democratic Party."
+    break;
+    case 6:
+    return "Democratic-leaning and financially comfortable, Opportunity Democrats have liberal attitudes on most issues including the environment, immigration and homosexuality. They stand out from other Democratic groups in their strong belief that hard work is enough for most people to get ahead and for being somewhat less likely to see structural barriers facing blacks and women. They are supportive of U.S. engagement abroad and involvement in global markets."
+    break;
+    case 7:
+    return "This majority-minority group mostly identifies as Democratic or leans toward the Democratic Party. Disaffected Democrats strongly believe the economic system unfairly favors powerful interests and that business corporations make too much profit. Relatively few believe their family has achieved the American Dream, and 24% believe it is out of reach for their family. Most say the government should do more to help the needy and that poor people have hard lives because government benefits do not go far enough to help them live decently. In contrast to other Democratic-oriented groups, a majority (63%) characterizes government as “almost always wasteful and inefficient."
+    break;
+    case 8:
+    return "This racially and ethnically diverse group is less politically homogenous than most other typology groups, though a 59% majority associates with the Democratic Party. Devout and Diverse voice strong support for the social safety net and further action on racial equality. However, they take more conservative views than their fellow Democratic-leaning groups on a number of issues including global engagement, views of business and attitudes on homosexuality and immigrants. Devout and Diverse are defined, in part, by their faith: Most say that it is necessary to believe in God in order to be moral and have good values."
+    break;
+  }
 }
 
 let questions = [{
@@ -477,7 +525,8 @@ let questions = [{
 
   var questionCounter = 0; //Tracks question number
   var selections = []; //Array containing user choices
-  var quiz = $('#quiz'); //Quiz div object
+  let quiz = $('#quiz'); //Quiz div object
+  let container2 = $('#container2');
   let party;
 
   // Display initial question
@@ -517,6 +566,8 @@ let questions = [{
   // Click handler for the 'Start Over' button
   $('#start').on('click', function (e) {
     quiz.children("p").remove();
+    container2.children("p").remove();
+    title2.remove();
     e.preventDefault();
 
     if(quiz.is(':animated')) {
@@ -598,6 +649,8 @@ let questions = [{
       } else {
         var scoreElem = displayScore();
         quiz.append("<p>"+scoreElem+"</p>").fadeIn();
+        title2.append("What this Means")
+        container2.append("<p>"+ typologyDescriptor() + "</p>").fadeIn();
         $('#next').hide();
         $('#prev').hide();
         $('#start').show();
@@ -633,16 +686,3 @@ let questions = [{
     return findTypology(answers,partyStr);
       //localStorage.setItem("answerArray", JSON.stringify(answers)); to get it back JSON.parse(localStorage.getItem("tGrades"))
   }
-
-/*var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-    if (xhr.readyState == XMLHttpRequest.DONE) {
-        alert(xhr.responseText);
-    }
-}
-xhr.open('GET', 'https://whoismyrepresentative.com/search/zip/11356', true);
-xhr.send(null);*/
-
-$.get('https://whoismyrepresentative.com/getall_mems.php?zip=31023', function(responseText) {
-    alert(responseText);
-});
