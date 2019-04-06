@@ -230,5 +230,5 @@
       }
       console.log(answers);
     }
-      localStorage.setItem("answerArray", JSON.stringify(answers));
+      localStorage.setItem("answerArray", JSON.stringify(answers)); //to get it back JSON.parse(localStorage.getItem("tGrades"))
     }
