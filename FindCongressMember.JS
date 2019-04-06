@@ -1,3 +1,15 @@
+function getCMTypologies(cm){
+  //cm is an array of user's congress members
+  var allCM = [];
+$.getJSON( "typologies.json", function(data){
+  allCM = data;
+  console.log(allCM);
+  for (i = 0; i < allCM.length; i++){
+
+  }
+});
+}
+
 function getCongressMembers(zip){
   /*var request = new XMLHttpRequest();
 
@@ -50,7 +62,8 @@ function getCongressMembers(zip){
                   sen2 = temp;
                 }
               }
-                $('#member').html("Rep1 is "+rep1+". Rep2 is "+rep2+". Rep3 is "+rep3+". Sen1 is "+sen1+". Sen2 is "+sen2+".");
+                console.log("Rep1 is "+rep1+". Rep2 is "+rep2+". Rep3 is "+rep3+". Sen1 is "+sen1+". Sen2 is "+sen2+".");
+                return [rep1,rep2,rep3,sen1,sen2];
             }
          }
       });

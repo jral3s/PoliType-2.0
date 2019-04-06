@@ -1,3 +1,6 @@
+//JSON.parse(localStorage.getItem("answerArray"))
+
+
 //finds typology given political beliefs
 function findTypology(polArr,party){
   //democrat typologies
