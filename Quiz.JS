@@ -565,6 +565,8 @@ let questions = [{
 
   // Click handler for the 'Start Over' button
   $('#start').on('click', function (e) {
+    document.getElementById('container2').style.display = "none";
+    document.getElementById('container3').style.display = "none";
     quiz.children("p").remove();
     container2.children("p").remove();
     title2.remove();
@@ -650,11 +652,13 @@ let questions = [{
       } else {
         var scoreElem = displayScore();
         quiz.append("<p>"+scoreElem+"</p>").fadeIn();
-        title2.append("What this Means")
+        title2.append("\nWhat this Means")
         container2.append("<p>"+ typologyDescriptor() + "</p>").fadeIn();
         $('#next').hide();
         $('#prev').hide();
         $('#start').show();
+        document.getElementById('container2').style.display = "block";
+        document.getElementById('container3').style.display = "block";
       }
     });
   }
