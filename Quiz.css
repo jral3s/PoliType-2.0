@@ -47,8 +47,8 @@ button {
     color: black;
 }
 
-#container {
-    width:100%;
+#container, #container2 {
+    width:75%;
     margin:auto;
     padding: 0 50px 80px 20px;
     background-color: #2d3a4c;

@@ -633,3 +633,16 @@ let questions = [{
     return findTypology(answers,partyStr);
       //localStorage.setItem("answerArray", JSON.stringify(answers)); to get it back JSON.parse(localStorage.getItem("tGrades"))
   }
+
+/*var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (xhr.readyState == XMLHttpRequest.DONE) {
+        alert(xhr.responseText);
+    }
+}
+xhr.open('GET', 'https://whoismyrepresentative.com/search/zip/11356', true);
+xhr.send(null);*/
+
+$.get('https://whoismyrepresentative.com/getall_mems.php?zip=31023', function(responseText) {
+    alert(responseText);
+});
