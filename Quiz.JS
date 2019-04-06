@@ -225,7 +225,7 @@
       if (selections[i] === questions[i].correctAnswer) {
         answers.append(-1);
       }
-      else if (selections[i] !== questions[i].correctAnswer)) {
+      else if (selections[i] !== questions[i].correctAnswer) {
         answers.append(1);
       }
       console.log(answers);
