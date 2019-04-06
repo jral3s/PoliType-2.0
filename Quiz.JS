@@ -579,10 +579,6 @@ let questions = [{
     $('#start').hide();
   });
 
-  $('#representatives').on('click', function (e) {
-    e.preventDefault();
-
-  }
 
   // Animates buttons on hover
   $('.button').on('mouseenter', function () {
@@ -648,7 +644,6 @@ let questions = [{
           $('#prev').show();
         } else if(questionCounter === 0){
 
-          $('#representatives').hide();
           $('#prev').hide();
           $('#next').show();
         }
@@ -657,7 +652,6 @@ let questions = [{
         quiz.append("<p>"+scoreElem+"</p>").fadeIn();
         title2.append("What this Means")
         container2.append("<p>"+ typologyDescriptor() + "</p>").fadeIn();
-        $('#representatives').show();
         $('#next').hide();
         $('#prev').hide();
         $('#start').show();
