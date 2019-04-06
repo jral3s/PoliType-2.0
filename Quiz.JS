@@ -444,7 +444,7 @@ let questions = [{
     correctAnswer: 0
 }, {
     question: "Which of the following statements comes closest to your view?",
-    choices: [" Our country has made the changes needed to give blacks equal rights with whites",
+    choices: ["Our country has made the changes needed to give blacks equal rights with whites",
               "Our country needs to continue making changes to give blacks equal rights with whites"],
     correctAnswer: 0
 }, {
