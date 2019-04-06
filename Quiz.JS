@@ -206,7 +206,7 @@
           $('#prev').hide();
           $('#next').show();
         }
-      }else {
+      } else {
         var scoreElem = displayScore();
         quiz.append(scoreElem).fadeIn();
         $('#next').hide();
@@ -225,7 +225,10 @@
       if (selections[i] === questions[i].correctAnswer) {
         answers.append(-1);
       }
-      else {
+      else if (selections[i] !== questions[i].correctAnswer)) {
         answers.append(1);
       }
+      console.log(answers);
+    }
+      localStorage.setItem("answerArray", JSON.stringify(answers));
     }
