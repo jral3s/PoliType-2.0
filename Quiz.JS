@@ -1,5 +1,4 @@
-(function() {
-  var questions = [{
+let questions = [{
     question: "Which of the following statements comes closest to your view?",
     choices: ["The government should do more to help needy Americans, even if it means going deeper into debt",
               "The government today can't afford to do much more to help the needy"],
@@ -225,10 +224,10 @@
       if (selections[i] === questions[i].correctAnswer) {
         answers.append(-1);
       }
-      else if (selections[i] !== questions[i].correctAnswer)) {
+      else if (selections[i] !== questions[i].correctAnswer) {
         answers.append(1);
       }
       console.log(answers);
     }
       localStorage.setItem("answerArray", JSON.stringify(answers)); //to get it back JSON.parse(localStorage.getItem("tGrades"))
-    }
+  }
